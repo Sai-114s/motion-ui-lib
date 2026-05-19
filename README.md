@@ -1,4 +1,5 @@
 # Motion UI Demo Library
+LIVE URL : https://sai-114s.github.io/motion-ui-lib/
 
 A production-quality Motion UI style demo built with plain HTML, CSS, and vanilla JS. The page showcases reusable motion utilities, animation presets, and interactive components including buttons, cards, banners, modals, and navigation transitions.
 
