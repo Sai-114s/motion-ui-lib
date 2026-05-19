@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Motion UI Demo Library</title>
+    <link rel="stylesheet" href="portfolio.css" />
+  </head>
+  <body>
+    <div class="bg-orb orb-a" aria-hidden="true"></div>
+    <div class="bg-orb orb-b" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="brand">
+        <span class="brand-dot"></span>
+        <div>
+          <p class="brand-eyebrow">Motion UI</p>
+          <h1 class="brand-title">Motion Demo Library</h1>
+        </div>
+      </div>
+      <nav class="site-nav" aria-label="Primary">
+        <button class="nav-btn" data-transition="fade">Fade</button>
+        <button class="nav-btn" data-transition="slide">Slide</button>
+        <button class="nav-btn" data-transition="scale">Scale</button>
+        <button class="nav-btn" data-transition="spin">Spin</button>
+      </nav>
+    </header>
+
+    <main class="page">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">System Overview</p>
+          <h2 class="hero-title">A clean, reusable motion toolkit for every UI moment.</h2>
+          <p class="hero-body">
+            Explore utility classes, transitions, and lightweight behaviors designed for buttons,
+            cards, modals, banners, and navigation states. Switch presets to preview how the
+            system feels across components.
+          </p>
+          <div class="hero-actions">
+            <button class="btn primary" data-motion="pulse">Primary Action</button>
+            <button class="btn ghost" data-motion="hover">Secondary</button>
+          </div>
+        </div>
+        <div class="hero-panel motion-card" data-motion="float">
+          <div class="hero-panel-inner">
+            <p class="panel-label">Active Preset</p>
+            <h3 class="panel-title" id="activePreset">Fade</h3>
+            <p class="panel-body">Use the playground to test transitions and utility classes.</p>
+            <div class="panel-stats">
+              <div>
+                <span class="stat-value">12</span>
+                <span class="stat-label">Utilities</span>
+              </div>
+              <div>
+                <span class="stat-value">4</span>
+                <span class="stat-label">Presets</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="demo-grid" id="components">
+        <div class="section-header">
+          <h3>Component Demos</h3>
+          <p>Buttons, cards, banners, and modals with reusable motion utilities.</p>
+        </div>
+        <div class="grid">
+          <article class="demo-card" data-motion="lift">
+            <div class="demo-card-header">
+              <h4>Buttons</h4>
+              <span class="pill">Interactive</span>
+            </div>
+            <p class="demo-card-body">Hover and click feedback with consistent timing curves.</p>
+            <div class="demo-row">
+              <button class="btn small">Default</button>
+              <button class="btn small primary">Primary</button>
+              <button class="btn small ghost">Ghost</button>
+            </div>
+          </article>
+
+          <article class="demo-card" data-motion="lift">
+            <div class="demo-card-header">
+              <h4>Cards</h4>
+              <span class="pill">Content</span>
+            </div>
+            <p class="demo-card-body">Layered shadow, float, and fade utilities.</p>
+            <div class="card-stack">
+              <div class="mini-card motion-fade">Insights</div>
+              <div class="mini-card motion-slide">Metrics</div>
+              <div class="mini-card motion-scale">Updates</div>
+            </div>
+          </article>
+
+          <article class="demo-card" data-motion="lift">
+            <div class="demo-card-header">
+              <h4>Banners</h4>
+              <span class="pill">Announcements</span>
+            </div>
+            <p class="demo-card-body">Callouts with smooth entry and exit transitions.</p>
+            <div class="banner" id="bannerDemo">
+              <strong>New preset ready.</strong>
+              <span>Switch presets to preview.</span>
+              <button class="btn text" data-banner-close>Dismiss</button>
+            </div>
+          </article>
+
+          <article class="demo-card" data-motion="lift">
+            <div class="demo-card-header">
+              <h4>Modal</h4>
+              <span class="pill">Overlay</span>
+            </div>
+            <p class="demo-card-body">Layered overlay with scale + fade transitions.</p>
+            <button class="btn primary" data-modal-open>Open Modal</button>
+          </article>
+        </div>
+      </section>
+
+      <section class="playground" id="playground">
+        <div class="section-header">
+          <h3>Preset Playground</h3>
+          <p>Toggle animation presets and apply motion utilities to the live preview.</p>
+        </div>
+        <div class="playground-layout">
+          <div class="preset-panel">
+            <div class="preset-options" role="tablist">
+              <button class="preset-btn is-active" data-preset="fade" role="tab">Fade</button>
+              <button class="preset-btn" data-preset="slide" role="tab">Slide</button>
+              <button class="preset-btn" data-preset="scale" role="tab">Scale</button>
+              <button class="preset-btn" data-preset="spin" role="tab">Spin</button>
+            </div>
+            <div class="utility-toggles">
+              <label class="toggle">
+                <input type="checkbox" data-toggle-utility="motion-glow" checked />
+                <span>Glow</span>
+              </label>
+              <label class="toggle">
+                <input type="checkbox" data-toggle-utility="motion-float" checked />
+                <span>Float</span>
+              </label>
+              <label class="toggle">
+                <input type="checkbox" data-toggle-utility="motion-bounce" />
+                <span>Bounce</span>
+              </label>
+            </div>
+          </div>
+          <div class="preview-panel">
+            <div class="preview-card" id="previewCard">
+              <p class="preview-label">Live Preview</p>
+              <h4>Motion Toolkit</h4>
+              <p>Click the triggers to see the selected preset in action.</p>
+              <div class="preview-actions">
+                <button class="btn small" data-preview="in">Animate In</button>
+                <button class="btn small ghost" data-preview="out">Animate Out</button>
+              </div>
+            </div>
+            <div class="preview-tabs">
+              <button class="tab is-active" data-tab="one">Overview</button>
+              <button class="tab" data-tab="two">Specs</button>
+              <button class="tab" data-tab="three">Usage</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="modal" id="demoModal" aria-hidden="true" role="dialog" aria-modal="true">
+      <div class="modal-backdrop" data-modal-close></div>
+      <div class="modal-card" role="document">
+        <div class="modal-header">
+          <h4>Modal Preview</h4>
+          <button class="btn icon" data-modal-close aria-label="Close">&times;</button>
+        </div>
+        <p>
+          This modal uses a shared preset with fade + scale utilities. Adjust presets in the
+          playground for consistent motion across overlays.
+        </p>
+        <div class="modal-actions">
+          <button class="btn ghost" data-modal-close>Close</button>
+          <button class="btn primary" data-modal-close>Confirm</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="portfolio.js"></script>
+  </body>
+</html>
